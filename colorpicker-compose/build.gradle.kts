@@ -6,6 +6,7 @@ plugins {
   id(libs.plugins.kotlin.android.get().pluginId)
   id(libs.plugins.kotlin.serialization.get().pluginId)
   id(libs.plugins.nexus.plugin.get().pluginId)
+  `maven-publish`
 }
 
 //apply(from = "${rootDir}/scripts/publish-module.gradle.kts")
@@ -50,6 +51,17 @@ android {
 
   lint {
     abortOnError = false
+  }
+}
+
+publishing.publications {
+  create<MavenPublication>("release") {
+    groupId = Configuration.artifactGroup
+    artifactId = name
+    version = "test"
+    afterEvaluate {
+      from(components["release"])
+    }
   }
 }
 
