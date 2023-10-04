@@ -4,7 +4,6 @@ import com.github.skydoves.colorpicker.compose.Configuration
 plugins {
   id(libs.plugins.android.application.get().pluginId)
   id(libs.plugins.kotlin.android.get().pluginId)
-  id(libs.plugins.baseline.profile.get().pluginId)
 }
 
 android {
@@ -63,6 +62,4 @@ dependencies {
   implementation(libs.androidx.compose.navigation)
 
   implementation(libs.photo.picker)
-
-  baselineProfile(project(":benchmark"))
 }
