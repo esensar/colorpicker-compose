@@ -9,22 +9,22 @@ plugins {
   id(libs.plugins.baseline.profile.get().pluginId)
 }
 
-apply(from = "${rootDir}/scripts/publish-module.gradle.kts")
-
-mavenPublishing {
-  val artifactId = "colorpicker-compose"
-  coordinates(
-    Configuration.artifactGroup,
-    artifactId,
-    rootProject.extra.get("libVersion").toString()
-  )
-
-  pom {
-    name.set(artifactId)
-    description.set("Jetpack Compose color picker for getting colors from any images by tapping on the desired color.")
-  }
-}
-
+//apply(from = "${rootDir}/scripts/publish-module.gradle.kts")
+//
+//mavenPublishing {
+//  val artifactId = "colorpicker-compose"
+//  coordinates(
+//    Configuration.artifactGroup,
+//    artifactId,
+//    rootProject.extra.get("libVersion").toString()
+//  )
+//
+//  pom {
+//    name.set(artifactId)
+//    description.set("Jetpack Compose color picker for getting colors from any images by tapping on the desired color.")
+//  }
+//}
+//
 android {
   compileSdk = Configuration.compileSdk
   namespace = "com.github.skydoves.colorpicker.compose"
